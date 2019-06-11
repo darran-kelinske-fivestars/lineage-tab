@@ -8,11 +8,11 @@ jobs:
       JVM_OPTS: -Xmx3200m
     steps:
       - run:
-          name: Boobs
+          name: Export working directory
           command: mkdir nougat ; cd nougat ; export AOSP_VOL=$PWD
       - run:
-          name: get build script
+          name: Get build script
           command: curl -O https://raw.githubusercontent.com/kylemanna/docker-aosp/master/tests/build-nougat.sh
       - run:
-          name: get build script
-          command: df -h
+          name: Run build script
+          command: bash build-nougat.sh
