@@ -19,3 +19,9 @@ jobs:
       - run:
           name: Sync Repo
           command: repo sync
+      - run:
+          name: Setup environment
+          command: source build/envsetup.sh
+       - run:
+          name: Build
+          command: brunch gtaxlwifi
