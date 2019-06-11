@@ -14,5 +14,8 @@ jobs:
           name: Get build script
           command: curl -O https://raw.githubusercontent.com/kylemanna/docker-aosp/master/tests/build-nougat.sh
       - run:
-          name: Run build script
-          command: bash build-nougat.sh
+          name: Init Repo
+          command: repo init -u https://github.com/LineageOS/android.git -b lineage-15.1
+            - run:
+                name: Sync Repo
+                command: repo sync
