@@ -3,7 +3,7 @@ jobs:
   build:
     working_directory: ~/code
     docker:
-      - image: kylemanna/aosp
+      - image: jfloff/lineageos
     environment:
       JVM_OPTS: -Xmx3200m
     steps:
@@ -15,7 +15,10 @@ jobs:
           command: curl -O https://raw.githubusercontent.com/kylemanna/docker-aosp/master/tests/build-nougat.sh
       - run:
           name: Init Repo
-          command: repo init -u https://github.com/LineageOS/android.git -b lineage-15.1
+          command: repo init -u https://github.com/LineageOS/android.git -b cm-14.1
       - run:
           name: Sync Repo
           command: repo sync
+      - run:
+          name: Source environment
+          command: lineageos init build
