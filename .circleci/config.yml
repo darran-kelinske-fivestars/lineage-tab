@@ -22,6 +22,6 @@ jobs:
       - run:
           name: Setup environment
           command: source build/envsetup.sh
-       - run:
+      - run:
           name: Build
           command: brunch gtaxlwifi
