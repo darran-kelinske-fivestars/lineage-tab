@@ -24,4 +24,4 @@ jobs:
           command: source build/envsetup.sh
       - run:
           name: Build
-          command: brunch gtaxlwifi
+          command: brunch aosp_arm-eng
