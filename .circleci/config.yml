@@ -8,6 +8,9 @@ jobs:
           name: check space
           command: df -h  
       - run:
+          name: setup git
+          command: git config --global user.email "you@example.com";   git config --global user.name "Your Name"           
+      - run:
           name: Init Repo
           command: repo init -u https://github.com/LineageOS/android.git -b cm-14.1
       - run:
