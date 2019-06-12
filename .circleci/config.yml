@@ -15,7 +15,7 @@ jobs:
           command: mkdir android; cd android; repo init -u https://github.com/LineageOS/android.git -b cm-14.1; ls -alh
       - run:
           name: Copy tab manifest
-          command: git clone https://github.com/followmsi/manifests.git; cd manifests; git checkout origin/gtaxl-cm-14.1; cp -r local_manifests /root/project/android/.repo/; ls -alh /root/project/android/.repo/       
+          command: git clone https://github.com/followmsi/manifests.git; cd manifests; git checkout origin/gtaxl-cm-14.1; cp -r local_manifests /root/project/android/.repo/; ls -alh /root/project/android/       
       - run:
           name: Sync Repo
           command: cd /root/project/android; repo sync
