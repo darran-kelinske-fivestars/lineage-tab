@@ -12,7 +12,7 @@ jobs:
           command: git config --global user.email "you@example.com";   git config --global user.name "Your Name"           
       - run:
           name: Init Repo
-          command: mkdir android; cd android; repo init -u https://github.com/LineageOS/android.git -b cm-14.1; ls -alh
+          command: mkdir android; cd android; repo init -u https://github.com/LineageOS/android.git -b cm-14.1; ls -alh .repo
       - run:
           name: Copy tab manifest
           command: git clone https://github.com/followmsi/manifests.git; cd manifests; git checkout origin/gtaxl-cm-14.1; cp -r local_manifests /root/project/android/.repo/; ls -alh /root/project/android/       
