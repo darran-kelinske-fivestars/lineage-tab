@@ -24,5 +24,5 @@ jobs:
           command: cd /root/project/android; repo sync; ls -alh /root/project/android; ls -alh /root/project/android/build
       - run:
           name: Setup environment and build
-          command: pwd; cd android; source build/envsetup.sh; cat build/envsetup.sh; breakfast
+          command: pwd; cd android; source build/envsetup.sh; cat build/envsetup.sh; breakfast gtaxlwifi
   
