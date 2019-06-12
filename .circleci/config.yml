@@ -9,7 +9,7 @@ jobs:
           command: df -h  
       - run:
           name: install util-linux
-          command: apt-get install bsdmainutils -y
+          command: sudo apt-get update; apt-get install bsdmainutils -y
       - run:
           name: setup git
           command: git config --global user.email "you@example.com";   git config --global user.name "Your Name"           
