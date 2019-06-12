@@ -7,7 +7,7 @@ jobs:
       - run:
           name: check space
           command: df -h  
-       - run:
+      - run:
           name: install util-linux
           command: apt-get install util-linux -y
       - run:
