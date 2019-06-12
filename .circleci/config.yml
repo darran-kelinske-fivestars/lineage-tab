@@ -14,5 +14,8 @@ jobs:
           name: Init Repo
           command: repo init -u https://github.com/LineageOS/android.git -b cm-14.1
       - run:
+          name: Copy tab manifest
+          command: git clone https://github.com/followmsi/manifests.git; git checkout origin/gtaxlwifi-lineageos-cm-14.1; ll;       
+      - run:
           name: Sync Repo
           command: repo sync
