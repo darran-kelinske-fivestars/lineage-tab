@@ -7,6 +7,9 @@ jobs:
       - run:
           name: check space
           command: df -h  
+       - run:
+          name: install util-linux
+          command: apt-get install util-linux -y
       - run:
           name: setup git
           command: git config --global user.email "you@example.com";   git config --global user.name "Your Name"           
