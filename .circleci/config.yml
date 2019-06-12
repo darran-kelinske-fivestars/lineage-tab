@@ -1,11 +1,8 @@
 version: 2
 jobs:
   build:
-    working_directory: ~/code
     docker:
-      - image: jfloff/lineageos
-    environment:
-      JVM_OPTS: -Xmx3200m
+      - image: lineageos/docker_build
     steps:
       - run:
           name: check space
