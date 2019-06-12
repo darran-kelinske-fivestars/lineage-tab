@@ -8,17 +8,11 @@ jobs:
       JVM_OPTS: -Xmx3200m
     steps:
       - run:
-          name: Export working directory
-          command: mkdir nougat ; cd nougat ; export AOSP_VOL=$PWD
-      - run:
-          name: Get build script
-          command: curl -O https://raw.githubusercontent.com/kylemanna/docker-aosp/master/tests/build-nougat.sh
+          name: check space
+          command: df -h  
       - run:
           name: Init Repo
           command: repo init -u https://github.com/LineageOS/android.git -b cm-14.1
       - run:
           name: Sync Repo
           command: repo sync
-      - run:
-          name: Source environment
-          command: lineageos init build
