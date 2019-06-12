@@ -19,3 +19,11 @@ jobs:
       - run:
           name: Sync Repo
           command: cd /root/project/android; repo sync
+      - run:
+          name: Sync Repo
+          command: cd /root/project/android; repo sync
+      - run:
+          name: Setup environment and build
+          command: source build/envsetup.sh; breakfast gtaxlwifi; croot; brunch gtaxlwifi
+        
+  
