@@ -2,7 +2,7 @@ version: 2
 jobs:
   build:
     docker:
-      - image: lineageos/docker_build
+      - image: lineageos4microg/docker-lineage-cicd
     steps:
       - run:
           name: check space
