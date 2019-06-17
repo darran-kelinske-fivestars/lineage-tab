@@ -2,22 +2,26 @@ version: 2
 jobs:
   build:
     docker:
-      - image: lineageos4microg/docker-lineage-cicd
+      - image: lineageos/docker_build
     steps:
       - run:
           name: check space
           command: df -h  
+      - run:
+          name: install util-linux
+          command: apt-get update; apt-get install bsdmainutils -y
       - run:
           name: setup git
           command: git config --global user.email "you@example.com";   git config --global user.name "Your Name"           
       - run:
           name: Init Repo
           command: mkdir android; cd android; repo init -u https://github.com/LineageOS/android.git -b cm-14.1; ls -alh .repo
-  
+      - run:
+          name: Copy tab manifest
+          command: git clone https://github.com/followmsi/manifests.git; cd manifests; git checkout origin/lineageos-cm-14.1; cp -r local_manifests /root/project/android/.repo/; ls -alh /root/project/android/       
       - run:
           name: Sync Repo
           command: cd /root/project/android; repo sync; ls -alh /root/project/android; ls -alh /root/project/android/build
       - run:
           name: Setup environment and build
-          command: pwd; cd android; source build/envsetup.sh && breakfast emulatorx86 && croot && brunch emulatorx86
-  
+          command: pwd; cd android; source build/envsetup.sh; cat build/envsetup.sh; breakfast
